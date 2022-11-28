@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jehlani Pace Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/logo 2.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    
+    <script src="script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://nextparticle.nextco.de/nextparticle.min.js"></script>
+
+
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+  <!---Back To Top-->
+
+
+
+
+
+  
+
+
+<!---cursor-->
+
+
+    <div id="cursor"></div>
+<div id="cursor-border"></div>
+
+<script>
+    const cursor = document.querySelector("#cursor");
+const cursorBorder = document.querySelector("#cursor-border");
+const cursorPos = { x: 0, y: 0 };
+const cursorBorderPos = { x: 0, y: 0 };
+
+document.addEventListener("mousemove", (e) => {
+  cursorPos.x = e.clientX;
+  cursorPos.y = e.clientY;
+
+  cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+});
+
+requestAnimationFrame(function loop() {
+  const easting = 8;
+  cursorBorderPos.x += (cursorPos.x - cursorBorderPos.x) / easting;
+  cursorBorderPos.y += (cursorPos.y - cursorBorderPos.y) / easting;
+
+  cursorBorder.style.transform = `translate(${cursorBorderPos.x}px, ${cursorBorderPos.y}px)`;
+  requestAnimationFrame(loop);
+});
+
+document.querySelectorAll("[data-cursor]").forEach((item) => {
+  item.addEventListener("mouseover", (e) => {
+    if (item.dataset.cursor === "pointer") {
+      cursorBorder.style.backgroundColor = "rgba(255, 255, 255, .6)";
+      cursorBorder.style.setProperty("--size", "30px");
+    }
+    if (item.dataset.cursor === "pointer2") {
+      cursorBorder.style.backgroundColor = "white";
+      cursorBorder.style.mixBlendMode = "difference";
+      cursorBorder.style.setProperty("--size", "80px");
+    }
+  });
+  item.addEventListener("mouseout", (e) => {
+    cursorBorder.style.backgroundColor = "unset";
+    cursorBorder.style.mixBlendMode = "unset";
+    cursorBorder.style.setProperty("--size", "50px");
+  });
+});
+</script>
+
+ <!---Nav-->
+
+ <nav class="nav-bar">
+  <a href="index.html">
+      <img src="images/logo.png" class="logo">
+  </a>
+  <ul id="sidemenu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="mailto:pacehjehlani@gmail.com">Contact</a></li>
+      <li><a href="images/Jehlani Pace Resume.pdf" target="_blank">Resume</a></li>
+      <i class="fa fa-times" onclick="closemenu()"></i>
+  </ul> 
+  <i class="fa fa-bars" onclick="openmenu()"></i>
+  
+  
+</nav>
+
+ <!---Progress Bar-->
+
+<div class="progress-container">
+  <div class="progress-bar" id="myBar"></div>
+</div>  
+
+<script>
+  // When the user scrolls the page, execute myFunction 
+  window.onscroll = function() {myFunction()};
+  
+  function myFunction() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    document.getElementById("myBar").style.width = scrolled + "%";
+  }
+  </script>
+
+
+
+  
+
+ <!---Header-->
+ 
+ <div>
+ <ul id="breadcrumbs">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="omnis-case-study.html">Omnis Case Study</a></li>
+  <li>Beyoncè & Bowl</li>
+  <li><a href="404-page.html">404 Page</a></li>
+  <li><a href="newsletter-modal.html">Newsletter Modal</a></li>
+  <li><a href="https://dribbble.com/jehp" target="_blank">Illustrations</a></li>
+  <li><a href="images/Jehlani Pace Portfolio-min-compressed.pdf" target="_blank">Architecture</a></li>
+</ul>
+</div>
+ <div id="header4">
+    <div class="bwb-container">
+        <div class="header-text">
+          
+        </div>
+    </div>
+    
+</div>
+
+ 
+
+
+
+
+<!---Overview-->
+<Section class="bwb-overview">
+  
+<div class="bwb-info">
+  <h1 class="h1-bwb">Overview</h1>
+  <div class="info-container">
+        <div class="bwb-summary">
+          <h2 class="h2-bwb">Summary</h2>
+           <p class="p1-bwb">This is a design that shows my understanding of how to create an <span class="highlighted pink">attention grabbing landing page.</span></p>
+            <h2 class="h2-bwb">Project Scope</h2>
+            <img src="images/bwb-scope.png" alt="" class="bwb-c1">
+            <h2 class="h2-bwb">Problem</h2>
+            <p class="p1-bwb">Design a landing page that promotes a live Beyoncè performance at a bowling alley.</p>
+            <h2 class="h2-bwb">Solution</h2>
+            <p class="p1-bwb">Created an enticing,simplistic, and elegant landing page design that utilized color psychology and microcopy.</p> 
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <Section class="bwb-empathize">
+  <div class="bwb-research">
+    <h1 class="h1-bwb-2">Research</h1>
+    <h2 class="h2-bwb">Who are the Users?</h2>
+    <p class="p1-bwb">My research helped me to determine that the majority of <span class="highlighted pink">Beyoncè fans are between the ages of 25-40 years old.</span> This allowed me to start brainstorming the aesthetic  of the landing page. Since this event would be for an older crowd, I wanted to convey romance and maturity. </p>
+    <h2 class="h2-bwb">What do They Want?</h2>
+    <p class="p1-bwb">This event is a once in a lifetime opportunity (imagine being this close to your favorite musician). <span class="highlighted pink">The users want to be able to easily scan important information on the landing page. They also want to know where to click in order to buy tickets immediately.</span></p>
+  </div>
+</Section>
+
+<Section class="bwb-ideate">
+  <div class="bwb-ideation">
+    <h1 class="h1-bwb-2">Design</h1>
+    <div class="bwb-cp">
+    <h2 class="h2-bwb">Color Psychology</h2>
+    <p class="p1-bwb">The primary color I selected for this design was pink. Pink was the best option for this concept because it <span class="highlighted pink">symbolizes passion, nostalgia, and can create urgency</span>. I also was inspired to use pink to create a sense of familiarity because Beyoncè's "Formation Tour" incorporated pink. </p>
+    <img src="images/pinkce496a.png" alt="" class="bwb-c1">
+  </div>
+  <div class="bwb-fs">
+    <h2 class="h2-bwb">Font Style</h2>
+    <p class="p1-bwb">I decided to use  Staatliches as my header font.</span> This was because it's a font with <span class="highlighted pink">strong bold letters that are very easy to read.</span> Similarly, I used <span class="highlighted pink">Overpass as my body font</span> because of readability. Since this <span class="highlighted pink">font is san-serif users are able to read and comprehend the information faster</span> than if I were to use a serif font.</p>
+    <img src="images/bwb-fonts.png" alt="Staatliches and Overpass" class="bwb-c1">
+    <div class="bwb-c1">
+    <h2 class="h2-bwb">Iteration 1</h2>
+    <p class="p1-bwb"><span class="highlighted pink">I started my design process by sketching and writing ideas.</span> I began to think about how I wanted my <span class="highlighted pink">header text</span> to look. I decided to go with a <span class="highlighted pink">neon theme</span> because throughout this project I kept thinking about galaxy bowling. I also began to sketch my <span class="highlighted pink">landing page layout.</span> I wanted to have a <span class="highlighted pink">scroll web page that contained 3 sections.</span> For each one of these sections, my plan was to create <span class="highlighted pink">vector drawings that would direct the user's attention to call to action buttons and important text.</span></p>
+    <img src="images/bwb-c1-sketches.png" alt="Concept 1 process" class="bwb-c1">
+    <p class="p1-bwb">After sketching, I decided to create a few low fidelity wireframes in order to get a better idea of how I wanted to layout each section.</p>
+    <img src="images/bwb-c1-wireframe.png" alt="concept 1 process wireframes" class="bwb-c1">
+    <p class="p1-bwb">I then began to play with font concepts and finalized the vector drawings.</p>
+    <img src="images/bwb-c1-fontvectors.png" alt="Concept 1 fonts and vector" class="bwb-c1">
+    <p class="p1-bwb">This is the <span class="highlighted pink">first iteration of the landing page design.</span> The page has three sections. A <span class="highlighted pink">home section</span> that contains the <span class="highlighted pink">venue name, date, and minimum age for entrance.</span> The <span class="highlighted pink">second section</span> offers a <span class="highlighted pink">call to action for users to buy tickets.</span> The <span class="highlighted pink">last section offers users the ability to subscribe to the bowling alley's weekly newsletter.</span></p>
+    <img src="images/bwb-c1hf.png" alt="Concept 1 final" class="bwb-c1">
+    <h2 class="h2-bwb">Feedback</h2>
+    <p class="p1-bwb">After my first iteration the feedback I received was to <span class="highlighted pink">condense information</span> into just one section so that the landing page would have no scrolling. After thinking more about the <span class="highlighted pink">user</span>, I realized that <span class="highlighted pink">they really don't care about any information that does not discuss Beyoncè.</span></p>
+    <img src="images/bwb-c1-feedback2.png" alt="Concept 1 feedback" class="bwb-c1">
+    <div class="bwb-c2">
+      <h2 class="h2-bwb">Iteration 2</h2>
+      <p class="p1-bwb">This is the <span class="highlighted pink">second iteration</span> of my design. I <span class="highlighted pink">focused on adjusting the layout</span> in order to include all information. I also <span class="highlighted pink">played around with the sizing and shape of the call to action button.</span></p>
+      <img src="images/bwb-c2-iterations.png" alt="Concept 2 process" class="bwb-c1">
+      <h2 class="h2-bwb">Feedback 2</h2>
+    <img src="images/bwb-c1-feedback2.png" alt="Concept 1 feedback" class="bwb-c1">
+      <h2 class="h2-bwb">Final Design</h2>
+      <img src="images/b&b-final-1.png" alt="Concept 1 process" class="bwb-c1">
+     
+  </div>
+    </div>
+   
+</Section>
+
+<ul id="breadcrumbs">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="omnis-case-study.html">Omnis Case Study</a></li>
+  <li>Beyoncè & Bowl</li>
+  <li><a href="404-page.html">404 Page</a></li>
+  <li><a href="newsletter-modal.html">Newsletter Modal</a></li>
+  <li><a href="https://dribbble.com/jehp" target="_blank">Illustrations</a></li>
+  <li><a href="images/Jehlani Pace Portfolio-min-compressed.pdf" target="_blank">Architecture</a></li>
+</ul>
+
+
+
+
+<script>
+  var sidemenu = document.getElementById("sidemenu");
+  
+  function openmenu(){
+    sidemenu.style.right = "0";
+    
+  }
+
+  function closemenu(){
+    sidemenu.style.right = "-200px";
+
+    
+  }
+</script>
+
+
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<footer>
+    <ul class="icons">
+        <li><a href="mailto:pacehjehlani@gmail.com"><ion-icon name="mail"></ion-icon></a></li>
+        <li><a href="https://www.linkedin.com/in/jehlani-pace/"target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+        <li><a href="https://dribbble.com/jehp"target="_blank"><ion-icon name="logo-dribbble"></ion-icon></a></li>
+        <li><a href="https://github.com/pacehj"target="_blank"><ion-icon name="logo-github"></ion-icon></a></li>
+        <div class="footer-copyright">
+            <p>&copy 2022 Jehlani Pace</p>
+        </div>
+</footer>
+
+
+
+</body>
+
+
+</html>

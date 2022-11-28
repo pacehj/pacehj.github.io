@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jehlani Pace Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/logo 2.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    
+    <script src="script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://nextparticle.nextco.de/nextparticle.min.js"></script>
+
+
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+  <!---Back To Top-->
+
+
+
+
+
+  
+
+
+<!---cursor-->
+
+
+    <div id="cursor"></div>
+<div id="cursor-border"></div>
+
+<script>
+    const cursor = document.querySelector("#cursor");
+const cursorBorder = document.querySelector("#cursor-border");
+const cursorPos = { x: 0, y: 0 };
+const cursorBorderPos = { x: 0, y: 0 };
+
+document.addEventListener("mousemove", (e) => {
+  cursorPos.x = e.clientX;
+  cursorPos.y = e.clientY;
+
+  cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+});
+
+requestAnimationFrame(function loop() {
+  const easting = 8;
+  cursorBorderPos.x += (cursorPos.x - cursorBorderPos.x) / easting;
+  cursorBorderPos.y += (cursorPos.y - cursorBorderPos.y) / easting;
+
+  cursorBorder.style.transform = `translate(${cursorBorderPos.x}px, ${cursorBorderPos.y}px)`;
+  requestAnimationFrame(loop);
+});
+
+document.querySelectorAll("[data-cursor]").forEach((item) => {
+  item.addEventListener("mouseover", (e) => {
+    if (item.dataset.cursor === "pointer") {
+      cursorBorder.style.backgroundColor = "rgba(255, 255, 255, .6)";
+      cursorBorder.style.setProperty("--size", "30px");
+    }
+    if (item.dataset.cursor === "pointer2") {
+      cursorBorder.style.backgroundColor = "white";
+      cursorBorder.style.mixBlendMode = "difference";
+      cursorBorder.style.setProperty("--size", "80px");
+    }
+  });
+  item.addEventListener("mouseout", (e) => {
+    cursorBorder.style.backgroundColor = "unset";
+    cursorBorder.style.mixBlendMode = "unset";
+    cursorBorder.style.setProperty("--size", "50px");
+  });
+});
+</script>
+
+ <!---Nav-->
+
+ <nav class="nav-bar">
+  <a href="index.html">
+      <img src="images/logo.png" class="logo">
+  </a>
+  <ul id="sidemenu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="mailto:pacehjehlani@gmail.com">Contact</a></li>
+      <li><a href="images/Jehlani Pace Resume.pdf" target="_blank">Resume</a></li>
+      <i class="fa fa-times" onclick="closemenu()"></i>
+  </ul> 
+  <i class="fa fa-bars" onclick="openmenu()"></i>
+  
+  
+</nav>
+
+
+ <!---Progress Bar-->
+
+<div class="progress-container">
+  <div class="progress-bar" id="myBar"></div>
+</div>  
+
+<script>
+  // When the user scrolls the page, execute myFunction 
+  window.onscroll = function() {myFunction()};
+  
+  function myFunction() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    document.getElementById("myBar").style.width = scrolled + "%";
+  }
+  </script>
+
+
+
+  
+
+ <!---Header-->
+ 
+ <div>
+ <ul id="breadcrumbs">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="omnis-case-study.html">Omnis Case Study</a></li>
+  <li><a href="beyonce-and-bowl.html">Beyoncè & Bowl</a></li>
+  <li><a href="404-page.html">404 Page</a></li>
+  <li>Newsletter Modal</li>
+  <li><a href="https://dribbble.com/jehp" target="_blank">Illustrations</a></li>
+  <li><a href="images/Jehlani Pace Portfolio-min-compressed.pdf" target="_blank">Architecture</a></li>
+</ul>
+</div>
+ <div id="header6">
+    <div class="bwb-container">
+        <div class="header-text">
+          
+        </div>
+    </div>
+    
+</div>
+
+ 
+
+
+
+
+<!---Overview-->
+<Section class="bwb-overview">
+  
+<div class="bwb-info">
+  <h1 class="h1-bwb">Overview</h1>
+  <div class="info-container">
+        <div class="bwb-summary">
+          <h2 class="h2-bwb">Summary</h2>
+           <p class="p1-bwb">A <span class="highlighted red1">Modal</span> design <span class="highlighted red1">that utilizes microcopy and Gestalt Principles</span> to encourage users to sign up for a newsletter. </span></p>
+            <h2 class="h2-bwb">Project Scope</h2>
+            <img src="images/newsmodalscope.png" alt="" class="bwb-c1">
+            <h2 class="h2-bwb">Problem</h2>
+            <p class="p1-bwb"> <span class="highlighted red1">Create a newsletter call to action</span> that utilizes great microcopy to encourage users to sign up.</p>
+            <h2 class="h2-bwb">Solution</h2>
+            <p class="p1-bwb">Designed a captivating modal pop-up that directs the user's attention to important text and a call to action button.</p> 
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <Section class="bwb-empathize">
+  <div class="bwb-research">
+    <h1 class="h1-bwb-2">Research</h1>
+    <h2 class="h2-bwb">Understanding Microcopy</h2>
+    <p class="p1-bwb">Since the challenge of this design was to <span class="highlighted red1">primarily focus on the writing I decided to research</span> more about <span class="highlighted red1">microcopy.</span> The  <span class="highlighted red1">key takeaways</span> that would help me in this particular design <span class="highlighted red1">were to:</span></p>
+    <li class="p1-bwb">
+      Understand the audience. 
+  </li>
+  <li class="p1-bwb">
+    Provide low cognitive load content.
+</li>
+<li class="p1-bwb">
+  Include reassurance text.
+</li>
+  <li class="p1-bwb">
+    Create an attention grabbing title.
+  </li>
+  <li class="p1-bwb">
+    Discuss what users will get when they sign up.
+  </li>
+  <li class="p1-bwb">
+    Call to action writing should be similar to the overall theme of the microcopy.
+  </li>
+    <h2 class="h2-bwb">Understanding the User</h2>
+    <p class="p1-bwb"><span class="highlighted red1">I decided to make an assumption since this was an open ended design prompt.</span> I assumed that the <span class="highlighted red1">modal</span> pop-up design would be <span class="highlighted red1">for an astronomy news website that provides easy to understand content regarding the Universe.</span> This assumption would help guide my design decision. </p>
+  </div>
+</Section>
+
+<Section class="bwb-ideate">
+  <div class="bwb-ideation">
+    <h1 class="h1-bwb-2">Design</h1>
+    <div class="bwb-cp">
+    <h2 class="h2-bwb">Color Psychology</h2>
+    <p class="p1-bwb">I decided to use three colors for my modal design. I selected <span class="highlighted red1">blue</span> because it symbolizes <span class="highlighted red1">trust and reliability.</span> Aside from this, blue was a <span class="highlighted red1">great color to symbolize space.</span> The second color, I used, was a variation of <span class="highlighted red1">red</span> called bittersweet shimmer because it not only <span class="highlighted red1">draws the user's attention</span> but, <span class="highlighted red1">symbolizes energy.</span> The last color I decided to incorporate was <span class="highlighted red1">orange</span> because it <span class="highlighted red1">symbolizes exploration.</span> </p>
+    <img src="images/news-modal-colors.png" alt="" class="bwb-c1">
+  </div>
+  <div class="bwb-fs">
+    <h2 class="h2-bwb">Font Style</h2>
+    <p class="p1-bwb">I chose to incorporate <span class="highlighted red1">two fonts in my design.</span> The first font was <span class="highlighted red1">Quicksand because it is a san-serif font</span> which makes content easier to read. The second font I selected was <span class="highlighted red1">Comic Sans MS.</span> I decided to use this font <span class="highlighted red1">because it is a san-serif</span>, and the <span class="highlighted red1">overall styling of the letters convey a sense of adventure.</span> I wanted users to understand that the newsletter they are signing up for takes them on an adventure.</p>
+    <img src="images/news-modal-font.png" alt="Quicksand and Comic Sans MS" class="bwb-c1">
+    <div class="bwb-c1">
+    <h2 class="h2-bwb">Iteration 1</h2>
+    <p class="p1-bwb">
+      I wanted to incorporate a vector drawing that would direct the users attention to the written content on the modal.</p>
+    <img src="images/news-modal-vector.png" alt="Concept 1 process" class="bwb-c1">
+    <p class="p1-bwb">I started to create a <span class="highlighted red1">wireframe to visualize</span> how I wanted to <span class="highlighted red1">layout</span> the information. I <span class="highlighted red1">decided to implement Gestalt Principles (common fate, similarity, continuity and proximity)</span> by designing an arrow to symbolize a constellation that would point users to the call to action sign up button.  </p>
+    <img src="images/news-modal-wireframe.png" alt="concept 1 process wireframes" class="bwb-c1">
+    <h2 class="h2-bwb">Microcopy Justification</h2>
+    <img src="images/news-modal-micrcopy.png" alt="concept 1 process wireframes" class="bwb-c1">
+    <p class="p1-bwb">This is the <span class="highlighted red1">first iteration</span> of the newsletter modal.</p>
+    <img src="images/news-modal-iteration 1.png" alt="Concept 1 final" class="bwb-c1">
+    <h2 class="h2-bwb">Feedback</h2>
+    <p class="p1-bwb">The <span class="highlighted red1">key takeaways</span> from the feedback I received were to:</p>
+    <li class="p1-bwb">
+       Limit sight lines.
+  </li>
+  <li class="p1-bwb">
+    Tighten microcopy more.
+</li>
+<li class="p1-bwb">
+  Increase the size of the vector drawing.
+</li>
+    <img src="images/news-modal-c1-feedback.png" alt="Concept 1 feedback" class="bwb-c1">
+    <div class="bwb-c2">
+    <h2 class="h2-bwb">Final Design</h2>
+      <img src="images/news-modal-final.png" alt="Concept 1 process" class="bwb-c1">
+     
+  </div>
+    </div>
+   
+</Section>
+
+<ul id="breadcrumbs">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="omnis-case-study.html">Omnis Case Study</a></li>
+  <li><a href="beyonce-and-bowl.html">Beyoncè & Bowl</a></li>
+  <li><a href="404-page.html">404 Page</a></li>
+  <li>Newsletter Modal</li>
+  <li><a href="https://dribbble.com/jehp" target="_blank">Illustrations</a></li>
+  <li><a href="images/Jehlani Pace Portfolio-min-compressed.pdf" target="_blank">Architecture</a></li>
+</ul>
+
+
+
+
+
+<script>
+  var sidemenu = document.getElementById("sidemenu");
+  
+  function openmenu(){
+    sidemenu.style.right = "0";
+    
+  }
+
+  function closemenu(){
+    sidemenu.style.right = "-200px";
+
+    
+  }
+</script>
+
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<footer>
+    <ul class="icons">
+        <li><a href="mailto:pacehjehlani@gmail.com"><ion-icon name="mail"></ion-icon></a></li>
+        <li><a href="https://www.linkedin.com/in/jehlani-pace/"target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+        <li><a href="https://dribbble.com/jehp"target="_blank"><ion-icon name="logo-dribbble"></ion-icon></a></li>
+        <li><a href="https://github.com/pacehj"target="_blank"><ion-icon name="logo-github"></ion-icon></a></li>
+        <div class="footer-copyright">
+            <p>&copy 2022 Jehlani Pace</p>
+        </div>
+</footer>
+
+
+
+</body>
+
+
+</html>

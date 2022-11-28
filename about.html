@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jehlani Pace Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/logo 2.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    
+
+
+</head>
+
+
+<body>
+
+<!---Circle Follow Cursor -->
+
+    <div id="cursor"></div>
+    <div id="cursor-border"></div>
+<script>
+    const cursor = document.querySelector("#cursor");
+const cursorBorder = document.querySelector("#cursor-border");
+const cursorPos = { x: 0, y: 0 };
+const cursorBorderPos = { x: 0, y: 0 };
+
+document.addEventListener("mousemove", (e) => {
+  cursorPos.x = e.clientX;
+  cursorPos.y = e.clientY;
+
+  cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+});
+
+requestAnimationFrame(function loop() {
+  const easting = 8;
+  cursorBorderPos.x += (cursorPos.x - cursorBorderPos.x) / easting;
+  cursorBorderPos.y += (cursorPos.y - cursorBorderPos.y) / easting;
+
+  cursorBorder.style.transform = `translate(${cursorBorderPos.x}px, ${cursorBorderPos.y}px)`;
+  requestAnimationFrame(loop);
+});
+
+document.querySelectorAll("[data-cursor]").forEach((item) => {
+  item.addEventListener("mouseover", (e) => {
+    if (item.dataset.cursor === "pointer") {
+      cursorBorder.style.backgroundColor = "rgba(255, 255, 255, .6)";
+      cursorBorder.style.setProperty("--size", "30px");
+    }
+    if (item.dataset.cursor === "pointer2") {
+      cursorBorder.style.backgroundColor = "white";
+      cursorBorder.style.mixBlendMode = "difference";
+      cursorBorder.style.setProperty("--size", "80px");
+    }
+  });
+  item.addEventListener("mouseout", (e) => {
+    cursorBorder.style.backgroundColor = "unset";
+    cursorBorder.style.mixBlendMode = "unset";
+    cursorBorder.style.setProperty("--size", "50px");
+  });
+});
+</script>
+
+
+ <!---Nav Bar-->
+ <nav class="nav-bar">
+  <a href="index.html">
+      <img src="images/logo.png" class="logo">
+  </a>
+  <ul id="sidemenu">
+      <li><a href="index.html">Home</a></li>
+      <li>About</li>
+      <li><a href="mailto:pacehjehlani@gmail.com">Contact</a></li>
+      <li><a href="images/Jehlani Pace Resume.pdf" target="_blank">Resume</a></li>
+      <i class="fa fa-times" onclick="closemenu()"></i>
+  </ul> 
+  <i class="fa fa-bars" onclick="openmenu()"></i>
+  
+  
+</nav>
+
+
+<!---About Section-->
+    
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <h1 class="sub-title">About Me</h1>
+                <p class="about-p2">I'm Jehlani and I am a Designer located in Chicago. My interest in UX Design actually came from my time studying Architecture. I've always loved solving problems and implementing concepts to make users' lives easier. So, when I discovered that there was a career path for this, in the tech space, I began to research more about the career and immediately was drawn to it. Aside from my interest in UX Design a few things I enjoy to do include:
+                  <br><br>
+                  <li class="about-p2">
+                    Watch Harry Potter
+                  </li>
+                  <li class="about-p2">
+                    Workout…while listening to Harry Potter audiobooks
+                  </li>
+                  <li class="about-p2">
+                    Play the piano 
+                  </li>
+
+                </p><br><br>
+                <p class="about-p4"> <a href="images/Jehlani Pace Resume.pdf" target="_blank">Download My Resume</a></p><br>
+                <p class="about-p4"> <a href="mailto:pacehjehlani@gmail.com">Get In Touch</a></p>
+            </div>
+           
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script>
+  var sidemenu = document.getElementById("sidemenu");
+  
+  function openmenu(){
+    sidemenu.style.right = "0";
+    
+  }
+
+  function closemenu(){
+    sidemenu.style.right = "-200px";
+
+    
+  }
+</script>
+
+<!---footer-->
+
+
+<footer>
+    <ul class="icons">
+        <li><a href="mailto:pacehjehlani@gmail.com"><ion-icon name="mail"></ion-icon></a></li>
+        <li><a href="https://www.linkedin.com/in/jehlani-pace/"target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+        <li><a href="https://dribbble.com/jehp"target="_blank"><ion-icon name="logo-dribbble"></ion-icon></a></li>
+        <li><a href="https://github.com/pacehj"target="_blank"><ion-icon name="logo-github"></ion-icon></a></li>
+        <div class="footer-copyright">
+            <p>&copy 2022 Jehlani Pace</p>
+        </div>
+</footer>
+
+   
+</body>
+</html>

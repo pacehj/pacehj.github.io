@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jehlani Pace Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/logo 2.png">
+    
+    <script src="script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://nextparticle.nextco.de/nextparticle.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+
+</head>
+
+
+<body>
+
+
+ <!---Circle Follow Cursor -->
+
+<div id="cursor"></div>
+<div id="cursor-border"></div>
+
+
+   
+    <!---Nav Bar-->
+    <nav class="nav-bar">
+        <a href="index.html">
+            <img src="images/logo.png" class="logo">
+        </a>
+        <ul id="sidemenu">
+            <li>Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="mailto:pacehjehlani@gmail.com">Contact</a></li>
+            <li><a href="images/Jehlani Pace Resume.pdf" target="_blank">Resume</a></li>
+            <i class="fa fa-times" onclick="closemenu()"></i>
+        </ul> 
+        <i class="fa fa-bars" onclick="openmenu()"></i>
+        
+        
+      </nav>
+      
+
+     <!---Header-->
+
+    <div id="header">
+        <div class="container">
+            <div class="header-text">
+                <h1>Jehlani Pace</h1>
+                <p class="p1"><span class="auto-type"></span></p>
+                <p class="p2">I bridge the gap between users and<br>technology.</p>
+                <a href="#my-work"><button class="reset anim-bg-gradient" ><h4>View My Work</h4> </button></a>
+                <p class="p4"><a href="mailto:pacehjehlani@gmail.com">Get In Touch</a></p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!---Portfolio Section-->
+    <div id="my-work">
+        <div class="container-work">
+            <div class="header-text">
+                <h1>My Work</h1>
+                <h4 class="work-font" ><a href="omnis-case-study.html">Omnis Case Study</a></h4>
+                <h4 class="work-font"><a href="beyonce-and-bowl.html">Beyoncè & Bowl</h4></a>
+                <h4 class="work-font"><a href="404-page.html">404 Page</h4></a>
+                <h4 class="work-font"><a href="newsletter-modal.html">Newsletter Modal</h4></a>
+                <h4 class="work-font"><a href="https://dribbble.com/jehp" target="_blank">Illustrations</h4></a>
+                <h4 class="work-font"><a href="images/Jehlani Pace Portfolio-min-compressed.pdf" target="_blank">Architecture</h4></a>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+        
+        function openmenu(){
+          sidemenu.style.right = "0";
+          
+        }
+      
+        function closemenu(){
+          sidemenu.style.right = "-200px";
+      
+          
+        }
+      </script>
+    <!---footer-->
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <footer>
+        <ul class="icons">
+            <li><a href="mailto:pacehjehlani@gmail.com"><ion-icon name="mail"></ion-icon></a></li>
+            <li><a href="https://www.linkedin.com/in/jehlani-pace/"target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+            <li><a href="https://dribbble.com/jehp"target="_blank"><ion-icon name="logo-dribbble"></ion-icon></a></li>
+            <li><a href="https://github.com/pacehj"target="_blank"><ion-icon name="logo-github"></ion-icon></a></li>
+            <div class="footer-copyright">
+                <p>&copy 2022 Jehlani Pace</p>
+            </div>
+    </footer>
+  
+
+
+
+    
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jehlani Pace Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/logo 2.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    
+    <script src="script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://nextparticle.nextco.de/nextparticle.min.js"></script>
+
+
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+  <!---Back To Top-->
+
+
+
+
+
+  
+
+
+<!---cursor-->
+
+
+    <div id="cursor"></div>
+<div id="cursor-border"></div>
+
+<script>
+    const cursor = document.querySelector("#cursor");
+const cursorBorder = document.querySelector("#cursor-border");
+const cursorPos = { x: 0, y: 0 };
+const cursorBorderPos = { x: 0, y: 0 };
+
+document.addEventListener("mousemove", (e) => {
+  cursorPos.x = e.clientX;
+  cursorPos.y = e.clientY;
+
+  cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+});
+
+requestAnimationFrame(function loop() {
+  const easting = 8;
+  cursorBorderPos.x += (cursorPos.x - cursorBorderPos.x) / easting;
+  cursorBorderPos.y += (cursorPos.y - cursorBorderPos.y) / easting;
+
+  cursorBorder.style.transform = `translate(${cursorBorderPos.x}px, ${cursorBorderPos.y}px)`;
+  requestAnimationFrame(loop);
+});
+
+document.querySelectorAll("[data-cursor]").forEach((item) => {
+  item.addEventListener("mouseover", (e) => {
+    if (item.dataset.cursor === "pointer") {
+      cursorBorder.style.backgroundColor = "rgba(255, 255, 255, .6)";
+      cursorBorder.style.setProperty("--size", "30px");
+    }
+    if (item.dataset.cursor === "pointer2") {
+      cursorBorder.style.backgroundColor = "white";
+      cursorBorder.style.mixBlendMode = "difference";
+      cursorBorder.style.setProperty("--size", "80px");
+    }
+  });
+  item.addEventListener("mouseout", (e) => {
+    cursorBorder.style.backgroundColor = "unset";
+    cursorBorder.style.mixBlendMode = "unset";
+    cursorBorder.style.setProperty("--size", "50px");
+  });
+});
+</script>
+
+ <!---Nav-->
+
+ <nav class="nav-bar">
+  <a href="index.html">
+      <img src="images/logo.png" class="logo">
+  </a>
+  <ul id="sidemenu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="mailto:pacehjehlani@gmail.com">Contact</a></li>
+      <li><a href="images/Jehlani Pace Resume.pdf" target="_blank">Resume</a></li>
+      <i class="fa fa-times" onclick="closemenu()"></i>
+  </ul> 
+  <i class="fa fa-bars" onclick="openmenu()"></i>
+  
+  
+</nav>
+
+ <!---Progress Bar-->
+
+<div class="progress-container">
+  <div class="progress-bar" id="myBar"></div>
+</div>  
+
+<script>
+  // When the user scrolls the page, execute myFunction 
+  window.onscroll = function() {myFunction()};
+  
+  function myFunction() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    document.getElementById("myBar").style.width = scrolled + "%";
+  }
+  </script>
+
+
+
+  
+
+ <!---Header-->
+ 
+ <div>
+ <ul id="breadcrumbs">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="omnis-case-study.html">Omnis Case Study</a></li>
+  <li><a href="beyonce-and-bowl.html">Beyoncè & Bowl</a></li>
+  <li>404 Page</li>
+  <li><a href="newsletter-modal.html">Newsletter Modal</a></li>
+  <li><a href="https://dribbble.com/jehp" target="_blank">Illustrations</a></li>
+  <li><a href="images/Jehlani Pace Portfolio-min-compressed.pdf" target="_blank">Architecture</a></li>
+</ul>
+</div>
+ <div id="header5">
+    <div class="bwb-container">
+        <div class="header-text">
+          
+        </div>
+    </div>
+    
+</div>
+
+ 
+
+
+
+
+<!---Overview-->
+<Section class="bwb-overview">
+  
+<div class="bwb-info">
+  <h1 class="h1-bwb">Overview</h1>
+  <div class="info-container">
+        <div class="bwb-summary">
+            <h2 class="h2-bwb">Summary</h2>
+           <p class="p1-bwb">Designing a 404 page that directs users back to a website.</p>
+            <h2 class="h2-bwb">Project Scope</h2>
+            <img src="images/404-page-scope.png" alt="" class="bwb-c1">
+            <h2 class="h2-bwb">Problem</h2>  
+            <p class="p1-bwb">A grocery store web development team needs help designing a user-friendly 404 page.</p>
+            <h2 class="h2-bwb">Solution</h2>
+            <p class="p1-bwb">Utilized UX 404 page practices to create a design that offers users the ability to be redirected to  the homepage, through the use of a call to action button, or to click on links that'll take them to other pages on the website.</p> 
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <Section class="bwb-empathize">
+  <div class="bwb-research">
+    <h1 class="h1-bwb-2">Research</h1>
+    <h2 class="h2-bwb">Understanding 404 Pages</h2>
+    <p class="p1-bwb">I started off my research by  <span class="highlighted maroon">learning about 404 pages.</span> This <span class="highlighted maroon">helped me understand</span> what <span class="highlighted maroon">best UX practices</span> I needed to incorporate in my design. <span class="highlighted maroon">From my research I determined that the best UX practices were to</span>:
+        <li class="p1-bwb">
+            Use a 404 page as a brand opportunity.
+        </li>
+        <li class="p1-bwb">
+            Make sure error message microcopy is straightforward and light hearted.
+        </li>
+        <li class="p1-bwb">
+            Include 3-4 links to relevant content.
+        </li>
+        <li class="p1-bwb">
+            Have a call to action.
+        </li>
+    </p>
+    <h2 class="h2-bwb">Assumptions</h2>
+    <p class="p1-bwb">Because this was an <span class="highlighted maroon">open ended design prompt, I decided to create a few assumptions.</span> The <span class="highlighted maroon">first</span> assumption I made was that the <span class="highlighted maroon">grocery store has a deli section</span> (yes, it's because I love sandwiches). Secondly, I made the assumption that this grocery store is affordable and offers weekly deals that their customers want to know more about. The last assumption I made was that the grocery store is a family owned business.</p>
+  </div>
+</Section>
+
+<Section class="bwb-ideate">
+  <div class="bwb-ideation">
+    <h1 class="h1-bwb-2">Design</h1>
+    <div class="bwb-cp">
+    <h2 class="h2-bwb">Color Psychology</h2>
+    <p class="p1-bwb">For this design <span class="highlighted maroon">I decided to incorporate three colors:</span></p>
+    <li class="p1-bwb">
+      <span class="highlighted maroon">Catawba</span> - A crimson color that <span class="highlighted maroon">symbolizes warmth and has a high visibility.</span>
+  </li>
+  <li class="p1-bwb">
+    <span class="highlighted maroon">Antique Brass</span> - An earthy orange color that symbolizes energy and happiness. I wanted to use this as the background color for the 404 page to make sure users don't feel any negative emotions. 
+  </li>
+  <li class="p1-bwb">
+    Outer Space Crayola - A forest green color that <span class="highlighted maroon">symbolizes naturalness and health.</span> I wanted to incorporate this color <span class="highlighted maroon">so users know that the produce, this grocery store sells, is natural and healthy.</span>
+  </li>
+</p>
+    <img src="images/404-page-color.png" alt="404-page-colors" class="bwb-c1">
+  </div>
+  <div class="bwb-fs">
+    <h2 class="h2-bwb">Font Style</h2>
+    <p class="p1-bwb">Originally, <span class="highlighted maroon">I wanted to incorporate two fonts</span> in my design which were <span class="highlighted maroon">Quicksand and Gluten.</span> I decided to use <span class="highlighted maroon">Quicksand</span> because it's <span class="highlighted maroon">san-serif which increases the readability of text.</span> I also chose Quicksand because of its <span class="highlighted maroon">rounded edges which gives the font a modern and somewhat playful appearance.</span> I selected <span class="highlighted maroon">Gluten because of its cartoonish feel.</span> Although I originally wanted to use two fonts, I <span class="highlighted maroon">decided to only use Quicksand in the final 404 page design.</span></p>
+    <img src="images/404-fontstyle.png" alt="quicksand-font" class="bwb-c1">
+    <div class="bwb-c1">
+    <h2 class="h2-bwb">Iteration 1</h2>
+    <p class="p1-bwb">I started off sketching how I envisioned the 404 page to look. My <span class="highlighted maroon">initial concept</span> was to design a page that shows a <span class="highlighted maroon">father and daughter shopping.</span> The <span class="highlighted maroon">daughter would be pointing at the call to action button</span> to direct users to return to the homepage.</p>
+    <img src="images/404-sketches.png" alt="Concept 1 process" class="bwb-c1">
+    <p class="p1-bwb">After sketching how I wanted the vector drawing to look, I started working on the <span class="highlighted maroon">microcopy.</span> I wanted to make a <span class="highlighted maroon">straight to the point light hearted copy.</span> I Also <span class="highlighted maroon">started to ideate what color to use for the call to action button.</span></p>
+    <img src="images/404-page-mc-cta1.png" alt="concept 1 process wireframes" class="bwb-c1">
+    <p class="p1-bwb">This is the first iteration of my 404 page concept.</p>
+    <img src="images/404-page(1).png" alt="Concept 1 fonts and vector" class="bwb-c1">
+    <h2 class="h2-bwb">Feedback</h2>
+    <p class="p1-bwb">The feedback I received after the first iteration was that I should remove the shelf vector because it caused too much visual noise. I also had suggestions to change the call to action button to the catawba color and only use one font.</p>
+    <img src="images/404-page-feedback1.png" alt="Concept 1 feedback" class="bwb-c1">
+    <div class="bwb-c2">
+      <h2 class="h2-bwb">Iteration 2</h2>
+      <p class="p1-bwb">This is the second iteration of my design.</p>
+      <img src="images/404-page(iteration2).png" alt="Concept 2 process" class="bwb-c1">
+      <h2 class="h2-bwb">Feedback 2</h2>
+    <img src="images/404-page-feedback2.png" alt="Concept 2 feedback" class="bwb-c1">
+      <h2 class="h2-bwb">Final Design</h2>
+      <img src="images/404-page(Final) 1.png" alt="Concept 1 process" class="bwb-c1">
+     
+  </div>
+  </div>
+</Section>
+
+
+
+<ul id="breadcrumbs">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="omnis-case-study.html">Omnis Case Study</a></li>
+  <li><a href="beyonce-and-bowl.html">Beyoncè & Bowl</a></li>
+  <li>404 Page</li>
+  <li><a href="newsletter-modal.html">Newsletter Modal</a></li>
+  <li><a href="https://dribbble.com/jehp" target="_blank">Illustrations</a></li>
+  <li><a href="images/Jehlani Pace Portfolio-min-compressed.pdf" target="_blank">Architecture</a></li>
+</ul>
+
+
+
+
+
+
+<script>
+  var sidemenu = document.getElementById("sidemenu");
+  
+  function openmenu(){
+    sidemenu.style.right = "0";
+    
+  }
+
+  function closemenu(){
+    sidemenu.style.right = "-200px";
+
+    
+  }
+</script>
+
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<footer>
+  
+    <ul class="icons">
+        <li><a href="mailto:pacehjehlani@gmail.com"><ion-icon name="mail"></ion-icon></a></li>
+        <li><a href="https://www.linkedin.com/in/jehlani-pace/"target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+        <li><a href="https://dribbble.com/jehp"target="_blank"><ion-icon name="logo-dribbble"></ion-icon></a></li>
+        <li><a href="https://github.com/pacehj"target="_blank"><ion-icon name="logo-github"></ion-icon></a></li>
+        <div class="footer-copyright">
+            <p>&copy 2022 Jehlani Pace</p>
+        </div>
+</footer>
+
+
+
+</body>
+
+
+</html>

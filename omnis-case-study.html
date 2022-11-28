@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jehlani Pace Portfolio</title>
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/logo 2.png">
+ 
+    
+    <script src="script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://nextparticle.nextco.de/nextparticle.min.js"></script>
+  <script>https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css
+  </script>
+
+
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+  <!---Back To Top-->
+
+
+
+
+
+  
+
+
+<!---cursor-->
+
+
+    <div id="cursor"></div>
+<div id="cursor-border"></div>
+
+<script>
+    const cursor = document.querySelector("#cursor");
+const cursorBorder = document.querySelector("#cursor-border");
+const cursorPos = { x: 0, y: 0 };
+const cursorBorderPos = { x: 0, y: 0 };
+
+document.addEventListener("mousemove", (e) => {
+  cursorPos.x = e.clientX;
+  cursorPos.y = e.clientY;
+
+  cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+});
+
+requestAnimationFrame(function loop() {
+  const easting = 8;
+  cursorBorderPos.x += (cursorPos.x - cursorBorderPos.x) / easting;
+  cursorBorderPos.y += (cursorPos.y - cursorBorderPos.y) / easting;
+
+  cursorBorder.style.transform = `translate(${cursorBorderPos.x}px, ${cursorBorderPos.y}px)`;
+  requestAnimationFrame(loop);
+});
+
+document.querySelectorAll("[data-cursor]").forEach((item) => {
+  item.addEventListener("mouseover", (e) => {
+    if (item.dataset.cursor === "pointer") {
+      cursorBorder.style.backgroundColor = "rgba(255, 255, 255, .6)";
+      cursorBorder.style.setProperty("--size", "30px");
+    }
+    if (item.dataset.cursor === "pointer2") {
+      cursorBorder.style.backgroundColor = "white";
+      cursorBorder.style.mixBlendMode = "difference";
+      cursorBorder.style.setProperty("--size", "80px");
+    }
+  });
+  item.addEventListener("mouseout", (e) => {
+    cursorBorder.style.backgroundColor = "unset";
+    cursorBorder.style.mixBlendMode = "unset";
+    cursorBorder.style.setProperty("--size", "50px");
+  });
+});
+</script>
+
+ <!---Nav-->
+
+<nav class="nav-bar">
+    <a href="index.html">
+        <img src="images/logo.png" class="logo">
+    </a>
+    <ul id="sidemenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="mailto:pacehjehlani@gmail.com">Contact</a></li>
+        <li><a href="images/Jehlani Pace Resume.pdf" target="_blank">Resume</a></li>
+        <i class="fa fa-times" onclick="closemenu()"></i>
+    </ul> 
+    <i class="fa fa-bars" onclick="openmenu()"></i>
+    
+    
+</nav>
+
+ <!---Progress Bar-->
+
+<div class="progress-container">
+  <div class="progress-bar" id="myBar"></div>
+</div>  
+
+<script>
+  // When the user scrolls the page, execute myFunction 
+  window.onscroll = function() {myFunction()};
+  
+  function myFunction() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    document.getElementById("myBar").style.width = scrolled + "%";
+  }
+  </script>
+
+
+
+  
+
+ <!---Header-->
+ 
+ <div>
+ <ul id="breadcrumbs">
+  <li><a href="index.html">Home</a></li>
+  <li>Omnis Case Study</li>
+  <li><a href="beyonce-and-bowl.html">Beyoncè & Bowl</a></li>
+  <li><a href="404-page.html">404 Page</a></li>
+  <li><a href="newsletter-modal.html">Newsletter Modal</a></li>
+  <li><a href="https://dribbble.com/jehp" target="_blank">Illustrations</a></li>
+  <li><a href="images/Jehlani Pace Portfolio-min-compressed.pdf" target="_blank">Architecture</a></li>
+</ul>
+</div>
+ <div id="header1">
+    <div class="bwb-container">
+        <div class="header-text">
+          
+        </div>
+    </div>
+    
+</div>
+
+ 
+
+
+
+
+<!---Overview-->
+<Section class="bwb-overview">
+  
+<div class="bwb-info">
+  <h1 class="h1-bwb">Overview</h1>
+  <div class="info-container">
+        <div class="bwb-summary">
+          <h2 class="h2-bwb">Summary</h2>
+           <p class="p1-bwb"> A virtual reality beauty metaverse.</p>
+            <h2 class="h2-bwb">Project Scope</h2>
+            <img src="images/omnis-scope.png" alt="" class="bwb-c1">
+            <h2 class="h2-bwb">Mission Statement</h2>
+            <p class="p1-bwb">
+              We are devoted to <span class="highlighted orange">helping our customers find</span> the best <span class="highlighted orange">beauty products for their unique skin needs.</span> We focus on helping you  <span class="highlighted orange">love the skin you're in.</span>
+            </p>
+            <h2 class="h2-bwb">Our Product</h2>
+            <p class="p1-bwb">
+            <li class="p1-bwb">
+              Omnis provides an <span class="highlighted orange">Augmented and Virtual Reality beauty shopping experience.</span>
+          </li>
+          <li class="p1-bwb">
+            Our Augmented Reality and <span class="highlighted orange">Skin Analysis technology</span> empowers individuals to <span class="highlighted orange">find</span> products that are specific to them. 
+          </li>
+            <li class="p1-bwb">
+              Our services <span class="highlighted orange">let customers shop from the comfort of their own home while enjoying a unique shopping experience.</span>
+            </li>
+            </p>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <Section class="bwb-empathize">
+  <div class="bwb-research">
+    <h1 class="h1-bwb-2">Research</h1>
+    <h2 class="h2-bwb">Qualitative Research</h2>
+    <h2 class="h2-bwb">Purpose</h2>
+    <p class="p1-bwb"><span class="highlighted orange">People have difficulty finding beauty products</span> unique to their needs. 
+      With our research <span class="highlighted orange">we wanted to learn three key details:</span>
+      </p>
+    <li class="p1-bwb">
+      Determine <span class="highlighted orange">interest in Augmented and Virtual Reality beauty shopping experiences.</span>
+  </li>
+  <li class="p1-bwb">
+    Understand <span class="highlighted orange">user pain points.</span> 
+</li>
+<li class="p1-bwb">
+  Understand <span class="highlighted orange">positive user experiences.</span>
+</li>
+    <h2 class="h2-bwb">Research Method</h2>
+    <li class="p1-bwb">
+      We conducted in-depth individual interviews with 5 participants. 
+  </li>
+  <li class="p1-bwb">
+    <span class="highlighted orange">Each interview was held in a remote setting.</span>There was one interviewer and one note taker present with each interviewee. 
+</li>
+<li class="p1-bwb">
+  We recorded each interview after we were given verbal consent by the participant.
+</li>
+<h2 class="h2-bwb">Participants</h2>
+<img src="images/omnis-participants.png" alt="" class="bwb-c1">
+<h2 class="h2-bwb">Qualitative Results</h2>
+<p class="p1-bwb"> <span class="highlighted orange">Two key takeaways</span> from our qualitative research were:
+  <li class="p1-bwb">
+    <span class="highlighted orange">100% of participants were interested in trying a Virtual Reality beauty shopping experience.</span>
+</li>
+<li class="p1-bwb">
+  Implement an <span class="highlighted orange">Augmented Reality feature</span> that <span class="highlighted orange">analyzes user's skin and offers them product recommendations.</span>
+</li>
+  </p>
+<img src="images/omnis-qualitative-results.png" alt="" class="bwb-c1">
+<h2 class="h2-bwb">Quantitative Research</h2>
+<p class="p1-bwb">To start our quantitative research process, we <span class="highlighted orange">began thinking about our hypothesis and null hypothesis.</span> 
+</p>
+<h2 class="h2-bwb">Hypothesis</h2>
+<p class="p1-bwb">People who purchase beauty products are interested in a Virtual Reality beauty product shopping experience.
+</p>
+<h2 class="h2-bwb">Null Hypothesis</h2>
+<p class="p1-bwb">
+People who purchase beauty products are not interested in a Virtual Reality beauty product shopping experience.
+</p>
+  <h2 class="h2-bwb">Quantitative Results</h2>
+  <p class="p1-bwb">There were a total of <span class="highlighted orange">69 survey responses.</span> However, <span class="highlighted orange">25 participants passed the screener.</span> The following results reflect their responses.
+    
+  </p>
+  <img src="images/omnis-quantitative-research.png" alt="" class="bwb-c1">
+  <h2 class="h2-bwb">Competitve Analysis</h2>
+  <p class="p1-bwb">From our competitor analysis we uncovered that users have a hard time finding our competitor's AR and VR services.
+  </p>
+  <p class="p1-bwb">Our 5 competitors were:
+    <li class="p1-bwb">
+      Ulta Beauty (Direct)
+  </li>
+  <li class="p1-bwb">
+    Sephora (Direct)
+  </li>
+    <li class="p1-bwb">
+      Clinique (Indirect)
+    </li>
+    <li class="p1-bwb">
+      Charlotte Tilbury (Indirect)
+    </li>
+    <li class="p1-bwb">
+      IT Cosmetics  (Indirect)
+    </li>
+
+  </p>
+  <h2 class="h2-bwb">SWOT Analysis</h2>
+  <img src="images/omnis-swot-analysis.png" alt="" class="bwb-c1">
+  <h2 class="h2-bwb">Heuristic Evaluation</h2>
+  <img src="images/omnis-heuristic-evaluation.png" alt="" class="bwb-c1">
+  <h2 class="h2-bwb">Conclusion of Research</h2>
+  <p class="p1-bwb">We found that <span class="highlighted orange">there was an interest in Omnis' Virtual Reality beauty store shopping experience.</span> The <span class="highlighted orange">data we collected will be used to create a user persona</span> which will help us build the ideal service. 
+  </p>
+  <h1 class="h1-bwb-2">Priya's Story</h1>
+  <p class="p1-bwb">To begin the creation of our user persona we <span class="highlighted orange">decided to make an advertisement</span> for Omnis that would be displayed in Times Square. <span class="highlighted orange">Our user, Priya, would see this advertisement and it would pique her interest.</span></p>
+  <img src="images/omnis-ad.png" alt="" class="bwb-c1">
+  <h2 class="h2-bwb">Persona</h2>
+  <img src="images/omnis-persona.png" alt="" class="bwb-c1">
+  <h2 class="h2-bwb">Empathy Map</h2>
+  <img src="images/omnis-empathy-map.png" alt="" class="bwb-c1">
+  <h2 class="h2-bwb">Journey Map</h2>
+  <img src="images/omnis-journey-map.png" alt="" class="bwb-c1">
+
+
+
+  </div>
+</Section>
+
+<Section class="bwb-ideate">
+  <div class="bwb-ideation">
+    <h1 class="h1-bwb-2">Design</h1>
+    <div class="bwb-cp">
+    <h2 class="h2-bwb">Logo Ideation</h2>
+    <p class="p1-bwb">We began <span class="highlighted orange">brainstorming ideas for Omnis' logo.</span> By designing multiple iterations we landed on the <span class="highlighted orange">final logo design concept which is on the bottom right corner.</span></p>
+    <img src="images/omis-logo-ideation.png" alt="" class="bwb-c1">
+    <h2 class="h2-bwb">Logo Meaning</h2>
+    <img src="images/omnis-logo-meaning.png" alt="Quicksand and Comic Sans MS" class="bwb-c1">
+    <div class="bwb-c1">
+    <h2 class="h2-bwb">Font Style</h2>
+    <p class="p1-bwb"><span class="highlighted orange">We wanted</span> to go for <span class="highlighted orange">fonts that conveyed a modern, clean look.</span> We decided that <span class="highlighted orange">Nunito</span> would be the best font choice for this and our body font. We then looked for a font that would go well with it, and found <span class="highlighted orange">Lora,</span> a serif font. </p>
+    <img src="images/omnis-font.png" alt="Quicksand and Comic Sans MS" class="bwb-c1">
+    <h2 class="h2-bwb">Style Guide</h2>
+    <p class="p1-bwb">Our slogan is “Beauty for All” because it relates back to our mission statement. The colors we selected symbolize inclusivity, discovery, and excitement. </p>
+    <img src="images/omnis-style-guide.png" alt="Quicksand and Comic Sans MS" class="bwb-c1">
+    <h2 class="h2-bwb">Information Architecture</h2>
+    <p class="p1-bwb">Our information architecture was simple. The main navigation consists of our services, a wishlist, sign up/login, and bag. We utilized Jakob's law to make sure the location and aesthetic of our navigation bar was similar to our competitors. For the Omnisverse, we decided to split everything into two categories: makeup and skin. We then went on to separate products into different categories that relate to face and body.</p>
+    <img src="images/omnis-IA.png" alt="Quicksand and Comic Sans MS" class="bwb-c1">
+    <h2 class="h2-bwb">User Flow</h2>
+    <p class="p1-bwb">
+      We created the user flow of how someone would navigate through our website. Our user flow includes  four sections: the homepage, the skincare analysis app, Omnisverse, and checkout process. Users start on the homepage then have the choice to go to the Omnisverse or skincare analysis page. Both options direct the user to the checkout process.</p>
+      <img src="images/omnis-user-flow.png" alt="Quicksand and Comic Sans MS" class="bwb-c1">
+  </div>
+  <div class="bwb-fs">
+    <h2 class="h2-bwb">Creating 3D VR Space</h2>
+    <p class="p1-bwb">
+      We <span class="highlighted orange">started off by sketching how we wanted the building to look.</span> We decided to go with a standard <span class="highlighted orange">square floor plan.</span>  We also decided to use <span class="highlighted orange">display stands to showcase our products.</span> We wanted to add <span class="highlighted orange">circle openings to allow our virtual light source to enter the space in efficient and captivating ways.</span>
+After this, we built the 3D model and rendered it.
+</p>
+    <img src="images/Omnis-3d.png" alt="Concept 1 process" class="bwb-c1">
+    <h2 class="h2-bwb">Rendered Space</h2>
+    <p class="p1-bwb">These are  <span class="highlighted orange">rendered images of our Virtual Reality makeup space.</span> We decided to go with a dreamscape architectural aesthetic because we wanted to provide our customers with a  unique Virtual Reality shopping experience. The left image shows the final render of our display stands. It also shows how  our structures' circular openings allow light to enter.The second image shows the entrance to our Virtual Reality space. All of our design choices for the 3D space were meant to create a warm and welcoming environment. <span class="highlighted orange">Our users will have two ways to navigate our  Virtual Reality space. They can use their mouse and keyboard to walk and shop. Or, if they don't  have a strong enough PC they will be able to use navigation buttons on our website to view and purchase products.</span>
+      </p>
+    <img src="images/Omnis-3d-render.png" alt="concept 1 process wireframes" class="bwb-c1">
+    <h2 class="h2-bwb">Wireframes</h2>
+    <img src="images/omnis-wireframes.png" alt="concept 1 process wireframes" class="bwb-c1">
+    <p class="p1-bwb">These are our initial high fidelity screens.</p>
+    <img src="images/omnis-iteration 1.png" alt="Concept 1 final" class="bwb-c1">
+    <h2 class="h2-bwb">Feedback</h2>
+    <img src="images/omnis-feedback.png" alt="Concept 1 final" class="bwb-c1">
+<h2 class="h2-bwb">Usability Testing Insight</h2>
+    <p class="p1-bwb">One of our users was tasked with adding a Smashbox foundation bottle to their bag. Then they were tasked to go through the checkout process. Afterward, the user was told to go through the skincare analysis app and buy the recommended products that were provided for them. <span class="highlighted orange">Overall, they had little to no difficulty going through the usability test.</span> However, they had a hard time finding our products in the Omnisverse due to the lack of labels. <span class="highlighted orange">They mentioned that they could not read the words that are on the product and would have liked to see what product they were hovering over.</span></p>
+   
+    <div class="bwb-c2">
+    <h2 class="h2-bwb">Final Design</h2>
+    <p class="p1-bwb">The final design incorporates the feedback we received from our first design presentation and our usability test. (Look closely and you'll see the water on the homepage moving.)
+    </p>
+    <h2 class="h2-bwb">Website</h2>
+    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="800" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FiC5KwH7p4gyJV7PxclMJM2%2FOMNIS-Design-File%3Fpage-id%3D674%253A1104%26node-id%3D981%253A2913%26viewport%3D945%252C524%252C0.03%26scaling%3Dscale-down%26starting-point-node-id%3D981%253A2913" allowfullscreen class="bwb-c1"></iframe>
+    <h2 class="h2-bwb">Mobile App</h2>
+    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="800" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FiC5KwH7p4gyJV7PxclMJM2%2FOMNIS-Design-File%3Fpage-id%3D467%253A636%26node-id%3D787%253A3555%26viewport%3D748%252C654%252C0.1%26scaling%3Dscale-down%26starting-point-node-id%3D1094%253A2922" allowfullscreen class="bwb-c1"></iframe>
+  </div>
+    </div>
+   
+</Section>
+
+<ul id="breadcrumbs">
+  <li><a href="index.html">Home</a></li>
+  <li>Omnis Case Study</li>
+  <li><a href="beyonce-and-bowl.html">Beyoncè & Bowl</a></li>
+  <li><a href="404-page.html">404 Page</a></li>
+  <li><a href="newsletter-modal.html">Newsletter Modal</a></li>
+  <li><a href="https://dribbble.com/jehp" target="_blank">Illustrations</a></li>
+  <li><a href="images/Jehlani Pace Portfolio-min-compressed.pdf" target="_blank">Architecture</a></li>
+</ul>
+
+
+
+
+
+
+<script>
+  var sidemenu = document.getElementById("sidemenu");
+  
+  function openmenu(){
+    sidemenu.style.right = "0";
+    
+  }
+
+  function closemenu(){
+    sidemenu.style.right = "-200px";
+
+    
+  }
+</script>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<footer>
+    <ul class="icons">
+        <li><a href="mailto:pacehjehlani@gmail.com"><ion-icon name="mail"></ion-icon></a></li>
+        <li><a href="https://www.linkedin.com/in/jehlani-pace/"target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+        <li><a href="https://dribbble.com/jehp"target="_blank"><ion-icon name="logo-dribbble"></ion-icon></a></li>
+        <li><a href="https://github.com/pacehj"target="_blank"><ion-icon name="logo-github"></ion-icon></a></li>
+        <div class="footer-copyright">
+            <p>&copy 2022 Jehlani Pace</p>
+        </div>
+</footer>
+
+
+
+</body>
+
+
+</html>
