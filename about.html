@@ -74,6 +74,7 @@ document.querySelectorAll("[data-cursor]").forEach((item) => {
   </a>
   <ul id="sidemenu">
       <li><a href="index.html">Home</a></li>
+      <li><a href="work.html">Work</a></li>
       <li>About</li>
       <li><a href="mailto:pacehjehlani@gmail.com">Contact</a></li>
       <li><a href="images/Jehlani Pace Resume.pdf" target="_blank">Resume</a></li>
@@ -86,33 +87,64 @@ document.querySelectorAll("[data-cursor]").forEach((item) => {
 
 
 <!---About Section-->
-    
-<div id="about">
-    <div class="container">
-        <div class="row">
-            <div class="about-col-1">
-                <h1 class="sub-title">About Me</h1>
-                <p class="about-p2">I'm Jehlani and I am a Designer located in Chicago. My interest in UX Design actually came from my time studying Architecture. I've always loved solving problems and implementing concepts to make users' lives easier. So, when I discovered that there was a career path for this, in the tech space, I began to research more about the career and immediately was drawn to it. Aside from my interest in UX Design a few things I enjoy to do include:
-                  <br><br>
-                  <li class="about-p2">
-                    Watch Harry Potter
-                  </li>
-                  <li class="about-p2">
-                    Workout…while listening to Harry Potter audiobooks
-                  </li>
-                  <li class="about-p2">
-                    Play the piano 
-                  </li>
 
-                </p><br><br>
-                <p class="about-p4"> <a href="images/Jehlani Pace Resume.pdf" target="_blank">Download My Resume</a></p><br>
-                <p class="about-p4"> <a href="mailto:pacehjehlani@gmail.com">Get In Touch</a></p>
-            </div>
-           
-            </div>
-        </div>
-    </div>
+
+<div id="about">
+  <div class="container">
+      <div class="row">
+          <div id="img-wrapper" class="about-col-1">
+              <img src="images/Pace.headshot1.png" id="pic" alt="pic">
+          </div>
+          <div class="about-col-2">
+              <h1 class="sub-title">About Me</h1>
+              <p class="p2" >Hi, my name is Jehlani and I am a Designer located in Chicago, IL. I've always loved solving problems and implementing concepts to make users' lives easier. My interest in UX/UI Design came from my time studying Architecture at the University of Illinois Urbana-Champaign. When I discovered there was a career path that dealt with empathizing with users, in the tech space, I began to research more about UX/UI design and I knew it was for me. Aside from my interest in User Experience and User Interface Design, I also enjoy:
+                <br>
+                <li class="p2">
+                Watching Sci-Fi films
+              </li >
+              <li class="p2">
+                Lifting weights 
+              </li>
+              <li class="p2">
+                Playing the piano</li>
+                </p>
+                <br>
+              <p class="p4"><a href="images/Jehlani Pace Resume.pdf" target="_blank">View My Resume</a></p>
+              <p class="p4"><a href="mailto:pacehjehlani@gmail.com">Get In Touch</a></p>
+             
+          </div>
+      </div>
+  </div>
 </div>
+
+
+
+
+
+
+<script src="https://nextparticle.nextco.de/nextparticle.min.js"></script>
+    <script>
+      var container = document.getElementById ('img-wrapper')
+      nextParticle = new NextParticle({
+        image: document.all.pic,
+        width: container.offsetWidth,
+        height: container.offsetHeight,
+        maxWidth: container.offsetWidth * 50,
+        particleGap: 4
+      });
+      window.onresize = function () {
+        
+          nextParticle.width = container.offsetWidth;
+          nextParticle.height = container.offsetHeight;
+          nextParticle.start();
+        
+      };
+
+
+
+      
+    </script>
+
 
 
 
