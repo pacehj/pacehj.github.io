@@ -285,7 +285,7 @@ nav ul li a:hover::after{
 
 
 .p2{
-    font-size: 20px;
+    font-size: 16px;
     color: rgba(255, 255, 255, 0.727);
     padding-top: 10px;
 }
@@ -479,7 +479,7 @@ counter-reset: menucounter;
 
 
 
-span{
+.menu-item span{
   font-size: 2rem;
 }
 
