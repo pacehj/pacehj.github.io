@@ -11,8 +11,7 @@ var typed = new Typed(".auto-type", {
 
 
 
-// back to top button/
-
+// scroll to top button/
 
 
 
@@ -64,67 +63,9 @@ document.querySelectorAll("[data-cursor]").forEach((item) => {
 // Scroll Fade//
 
 
-var header = document.getElementById('header');
-var about = document.getElementById('about');
-var header4 = document.getElementById('header4');
 
-function fadeOutOnScroll(element) {
-  if (!element) {
-    return;
-  }
-  
-  var distanceToTop = window.pageYOffset + element.getBoundingClientRect().top;
-  var elementHeight = element.offsetHeight;
-  var scrollTop = document.documentElement.scrollTop;
-  
-  var opacity = 1;
-  
-  if (scrollTop > distanceToTop) {
-    opacity = 1 - (scrollTop - distanceToTop) / elementHeight;
-  }
-  
-  if (opacity >= 0) {
-    element.style.opacity = opacity;
-  }
-}
 
-function scrollHandler() {
-  fadeOutOnScroll(header);
-  fadeOutOnScroll(about);
-  fadeOutOnScroll(header4);
-}
 
-window.addEventListener('scroll', scrollHandler);
-
-var header4 = document.getElementById('header4');
-
-function fadeOutOnScroll(element) {
-  if (!element) {
-    return;
-  }
-  
-  var distanceToTop = window.pageYOffset + element.getBoundingClientRect().top;
-  var elementHeight = element.offsetHeight;
-  var scrollTop = document.documentElement.scrollTop;
-  
-  var opacity = 1;
-  
-  if (scrollTop > distanceToTop) {
-    opacity = 1 - (scrollTop - distanceToTop) / elementHeight;
-  }
-  
-  if (opacity >= 0) {
-    element.style.opacity = opacity;
-  }
-}
-
-function scrollHandler() {
-  fadeOutOnScroll(header);
-  fadeOutOnScroll(about);
-  fadeOutOnScroll(header4);
-}
-
-window.addEventListener('scroll', scrollHandler);
 
 // about 
 
