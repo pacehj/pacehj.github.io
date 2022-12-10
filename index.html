@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jehlani Pace Portfolio</title>
+    <title>Jehlani Pace</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/logo 2.png">
     
@@ -13,7 +13,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <script src="https://nextparticle.nextco.de/nextparticle.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
 
@@ -61,7 +60,7 @@
             <div class="header-text">
                 <h1>Jehlani Pace</h1>
                 <p class="p1"><span class="auto-type"></span></p>
-                <p class="p2">I bridge the gap between users and<br>technology.</p>
+                <p class="p2">I bridge the gap between users<br> and technology.</p>
                 <a href="work.html"><button class="reset anim-bg-gradient" ><h4>View My Work</h4> </button></a>
                 <p class="p4"><a href="mailto:pacehjehlani@gmail.com">Get In Touch</a></p>
             </div>
@@ -71,6 +70,52 @@
     
 
     <script>
+
+// Circle Follow Cursor/
+const cursor = document.querySelector("#cursor");
+const cursorBorder = document.querySelector("#cursor-border");
+const cursorPos = { x: 0, y: 0 };
+const cursorBorderPos = { x: 0, y: 0 };
+
+document.addEventListener("mousemove", (e) => {
+  cursorPos.x = e.clientX;
+  cursorPos.y = e.clientY;
+
+  cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+});
+
+requestAnimationFrame(function loop() {
+  const easting = 8;
+  cursorBorderPos.x += (cursorPos.x - cursorBorderPos.x) / easting;
+  cursorBorderPos.y += (cursorPos.y - cursorBorderPos.y) / easting;
+
+  cursorBorder.style.transform = `translate(${cursorBorderPos.x}px, ${cursorBorderPos.y}px)`;
+  requestAnimationFrame(loop);
+});
+
+document.querySelectorAll("[data-cursor]").forEach((item) => {
+  item.addEventListener("mouseover", (e) => {
+    if (item.dataset.cursor === "pointer") {
+      cursorBorder.style.backgroundColor = "rgba(255, 255, 255, .6)";
+      cursorBorder.style.setProperty("--size", "30px");
+    }
+    if (item.dataset.cursor === "pointer2") {
+      cursorBorder.style.backgroundColor = "white";
+      cursorBorder.style.mixBlendMode = "difference";
+      cursorBorder.style.setProperty("--size", "80px");
+    }
+  });
+  item.addEventListener("mouseout", (e) => {
+    cursorBorder.style.backgroundColor = "unset";
+    cursorBorder.style.mixBlendMode = "unset";
+    cursorBorder.style.setProperty("--size", "50px");
+  });
+});
+// Circle Follow Cursor End/
+
+
+
+// Side Nav Menu/
         var sidemenu = document.getElementById("sidemenu");
         
         function openmenu(){
@@ -83,7 +128,23 @@
       
           
         }
+// Side Nav Menu End //
+
+// Animated Text//
+
+
+var typed = new Typed(".auto-type", {
+    strings: ["UX/UI Designer", "Illustrator", "3D Designer",],
+    typeSpeed: 100,
+    backSpeed: 100,
+    loop: true
+})
+
+// Animated Text End//
       </script>
+
+
+
     <!---footer-->
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
