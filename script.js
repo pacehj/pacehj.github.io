@@ -14,7 +14,6 @@ var typed = new Typed(".auto-type", {
 // scroll to top button/
 
 
-
 // Circle Follow Cursor/
 
 const cursor = document.querySelector("#cursor");
