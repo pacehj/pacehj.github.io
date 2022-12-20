@@ -3037,7 +3037,7 @@ animation:fadeIn ease-in 1;
 
     #header-bb{
       width: 100%;
-      height: 60vh;
+      height: 70vh;
       background-image: url(images/bwb-header-tablet.png);
       background-size: 100%;
       background-repeat: no-repeat;
@@ -3049,7 +3049,7 @@ animation:fadeIn ease-in 1;
 
   #header-404{
     width: 100%;
-    height: 60vh;
+    height: 70vh;
     background-image: url(images/404-page-tablet.png);
     background-size: 100%;
     background-repeat: no-repeat;
@@ -3061,7 +3061,7 @@ animation:fadeIn ease-in 1;
 
 #header-modal{
   width: 100%;
-  height: 60vh;
+  height: 70vh;
   background-image: url(images/newsletter-header-tablet.png);
   background-size: 100%;
   background-repeat: no-repeat;
@@ -3073,7 +3073,7 @@ animation:fadeIn ease-in 1;
 
 #header-omnis{
   width: 100%;
-  height: 60vh;
+  height: 70vh;
   background-image: url(images/Omnis-header-tablet.png);
   background-size: 100%;
   background-repeat: no-repeat;
@@ -3085,7 +3085,7 @@ animation:fadeIn ease-in 1;
 
 #header-latch{
   width: 100%;
-  height: 60vh;
+  height: 70vh;
   background-image: url(images/latch-header-tablet.png);
   background-size: 100%;
   background-repeat: no-repeat;
