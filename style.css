@@ -248,7 +248,7 @@ nav ul li a:hover::after{
 }
 
 .p4 a{
-    color: #fff;
+    color: rgba(255, 255, 255, 0.505);
     text-decoration: none;
     position: relative;
 
@@ -262,7 +262,7 @@ nav ul li a:hover::after{
   .p4 a::after{
     content: '';
     width: 0;
-    height: 3px;
+    height: 1px;
     background: #7A5640;
     position: absolute;
     left: 0;
@@ -273,7 +273,7 @@ nav ul li a:hover::after{
 
   .p4 a:hover::after {
     width: 100%;
-
+    transition: 0.5s;
   }
 
 
@@ -2801,7 +2801,7 @@ animation:fadeIn ease-in 1;
 }
 
 .p1-proj{
-    font-size: 20px;
+    font-size: 18px;
     padding-top: 2px;
     padding-right: 2px;
 
@@ -3122,7 +3122,7 @@ animation:fadeIn ease-in 1;
 }
 
 .p1-proj{
-    font-size: 20px;
+    font-size: 18px;
     padding-top: 2px;
     padding-right: 2px;
 }
@@ -3232,7 +3232,7 @@ animation:fadeIn ease-in 1;
 
 
     .p1-proj{
-      font-size: 20px;
+      font-size: 18px;
       color: rgba(255, 255, 255, 0.727);
       padding-top: 10px;
       padding-right: 120px;
@@ -3317,7 +3317,7 @@ animation:fadeIn ease-in 1;
 
 
     .p1-proj{
-      font-size: 25px;
+      font-size: 18px;
       color: rgba(255, 255, 255, 0.727);
       padding-top: 10px;
       padding-right: 120px;
