@@ -9,7 +9,10 @@ var typed = new Typed(".auto-type", {
 })
 
 
-
+$(window).scroll(function() {
+    $(".bwb-container").css("opacity", 1 - $(window).scrollTop() / 250);
+  });
+  
 
 // scroll to top button/
 
